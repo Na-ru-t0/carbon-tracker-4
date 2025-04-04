@@ -1,0 +1,15 @@
+// script.js
+function calculateCarbon() {
+    let transport = document.getElementById("transport").value || 0;
+    let electricity = document.getElementById("electricity").value || 0;
+    let diet = document.getElementById("diet").value || 0;
+
+    // Emission factors (approximate values in kg CO2 per unit)
+    let transportEmission = transport * 0.12; // Car: ~0.12 kg CO2 per km
+    let electricityEmission = electricity * 0.5; // ~0.5 kg CO2 per kWh
+    let dietEmission = diet * 3; // ~3 kg CO2 per meat-based meal
+
+    let totalEmissions = transportEmission + electricityEmission + dietEmission;
+    
+    document.getElementById("totalEmissions").innerText = totalEmissions.toFixed(2);
+}
